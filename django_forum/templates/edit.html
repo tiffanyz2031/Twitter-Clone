@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+    <section class="head">
+        <div class="header">
+            <img src="{% static 'img/techis-logo.png' %}" alt="techis-logo" />
+            <h1>Edit Tweet</h1>
+        </div>
+    </section>
+    <section class="post_form">
+        <form action="/edit/{{post.id}}/" method="POST" enctype="multipart/form-data">
+            {%csrf_token %}
+            <div class="logo">
+
+                <img src="" alt=""/>
+            </div>
+
+            <input class="nameing" type="text" name="name" value="{{post.name}}" />
+            <textarea name="body" placeholder="What's on your mind" rows="4" cols="50">{{post.body}}</textarea>
+            <img src="{{post.image.url}}" class="image2" style="width: 50%; padding-bottom:20px"/><br /><br />
+            <input class="file" name="image" type="file" cols="10" />
+            <button name="cancel" href="/" type="submit" id="cancel">Cancel</button>
+            <button class="update" type="submit" class="update">Update</button>
+
+        </form>
+    </section>
+    <script src=""
+        integrity="" crossorigin="anonymous"></script>
+    <script src=""></script>
+</section>
+{% endblock %}
