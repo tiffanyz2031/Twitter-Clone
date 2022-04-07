@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <section class="content">
-  <section class="head">
+  <div class="head">
     <div class="header">
         <img src="static/img/logo-twitterblue.svg" alt="techis-logo" />
         <h1>Home</h1>
     </div>
-  </section>
+  </div>
   <section class="post_form">
         <form action="/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
@@ -14,10 +14,10 @@
                 <img src="{% static 'img/man-user.png' %}" alt="" />
             </div>
 
-            <input class="nameing" type="text" name="name" placeholder="Your name" required />
-            <textarea name="body" placeholder="What's on your mind?" rows="4" cols="50" required></textarea>
-            <input class="file" name="image" type="file" />
-            <button type="submit" value="Post">Tweet</button>
+            <input  type="text" name="name" placeholder="Your name" required />
+            <textarea name="body" placeholder="What's on your mind?"  required></textarea>
+            <input id="file" name="image" type="file" />
+            <button type="submit" id="tweet">Tweet</button>
 
         </form>
 </section>
@@ -36,12 +36,12 @@
                <div class="name_body">
                 <div class="name">{{post.name}}</div> <br>
                 <div class="date">{{post.created_at}} </div><br>
-                <div class="body">{{post.body}} </div>
+                <p>{{post.body}}</p>
                 {% if post.image.url %}
                 <img class="image" src="{{ post.image.url }}" style="width: 100%;" />
                 {% endif %}
                 <div class="heart">
-                  <a href="/likes/{{post.id}}">
+                  <a href="/likes/{{post.id}}/">
                       <img src="{% static 'img/heart.png' %}"
                     /></a>
                     {{post.like_count}}

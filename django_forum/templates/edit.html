@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <section class="content">
-    <section class="head">
+    <div class="head">
         <div class="header">
             <img src="{% static 'img/logo-twitterblue.svg' %}" alt="techis-logo" />
             <h1>Edit Tweet</h1>
         </div>
-    </section>
-    <section class="post_form">
+    </div>
+    <section class="post_for">
         <form action="/edit/{{post.id}}/" method="POST" enctype="multipart/form-data">
             {%csrf_token %}
             <div class="logo">
@@ -14,17 +14,16 @@
                 <img src="% static 'img/man-user.png' %}" alt=""/>
             </div>
 
-            <input class="nameing" type="text" name="name" value="{{post.name}}" />
-            <textarea name="body" placeholder="What's on your mind" rows="4" cols="50">{{post.body}}</textarea>
-            <img src="{{post.image.url}}" class="image2" style="width: 50%; padding-bottom:20px"/><br /><br />
-            <input class="file" name="image" type="file" cols="10" />
-            <button name="cancel" href="/" type="submit" id="cancel">Cancel</button>
-            <button class="update" type="submit" class="update">Update</button>
+            <input  type="text" name="name" value="{{post.name}}" required />
+            <input class="texted" type="text" name="body" value="{{post.body}}" required/>
+            {% if post.image.url %}
+            <img src="{{post.image.url}}" class="image2" style="width: 50%; padding-bottom:20px"/>
+            {% endif %}
+            <input name="image" type="file"/>
+            <input value="cancel" type="submit" style="width: 50px; background-color: #3494dd;"/>
+            <input type="submit" value="edit" style="width: 60px; background-color: red;" />
 
         </form>
     </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/post.js' %}"></script>
+    {% endblock %}
 </section>
-{% endblock %}
