@@ -2,7 +2,7 @@
 <section class="content">
     <section class="head">
         <div class="header">
-            <img src="{% static 'img/techis-logo.png' %}" alt="techis-logo" />
+            <img src="{% static 'img/logo-twitterblue.svg' %}" alt="techis-logo" />
             <h1>Edit Tweet</h1>
         </div>
     </section>
@@ -11,7 +11,7 @@
             {%csrf_token %}
             <div class="logo">
 
-                <img src="" alt=""/>
+                <img src="% static 'img/man-user.png' %}" alt=""/>
             </div>
 
             <input class="nameing" type="text" name="name" value="{{post.name}}" />
@@ -23,8 +23,8 @@
 
         </form>
     </section>
-    <script src=""
-        integrity="" crossorigin="anonymous"></script>
-    <script src=""></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/post.js' %}"></script>
 </section>
 {% endblock %}
