@@ -27,16 +27,16 @@
             <li>
               <img class="menu_icon js-menu-icon" src="{% static 'img/menu.png' %}" alt="" />
               <div class="menu">
-                  <a href="/edit/{{post.id}}/">Edit</a><br>
+                  <a href="/edit/{{ post.id }}/">Edit</a><br>
                   <a href="/delete/{{ post.id }}/">Delete</a>
               </div>
               <div class="logo">
                 <img src="{% static 'img/man-user.png' %}" alt="" />
                </div>
                <div class="name_body">
-                <div class="name">{{post.name}}</div> <br>
-                <div class="date">{{post.created_at}} </div><br>
-                <p>{{post.body}}</p>
+                <div class="name">{{ post.name }}</div> <br>
+                <div class="date">{{ post.created_at }} </div><br>
+                <p>{{ post.body }}</p>
                 {% if post.image.url %}
                 <img class="image" src="{{ post.image.url }}" style="width: 100%;" />
                 {% endif %}
@@ -44,7 +44,7 @@
                   <a href="/likes/{{post.id}}/">
                       <img src="{% static 'img/heart.png' %}"
                     /></a>
-                    {{post.like_count}}
+                    {{ post.like_count }}
                 </div>
              </div> 
             </li>
