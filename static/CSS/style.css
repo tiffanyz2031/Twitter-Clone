@@ -83,7 +83,9 @@ section {
     border: 0px;
     height: 30%;
     padding: 20px 10px;
-    border: 1px solid #ccc
+    border: 1px solid #ccc;
+    position: relative;
+    left: 9%;
 }
 .post_for .texted {
     border: 0px;
@@ -264,9 +266,8 @@ section {
 #file {
    
     width: 45%;
-    margin-left: 81px;
+    margin-left: 43px;
     background-color: white;
-    margin-right: 88px;
     margin-bottom: 8px;
     border: 0;
 }
@@ -280,4 +281,14 @@ section {
 .heart img {
     width: 20px;
     padding: 5px;
+}
+
+.textarea{
+  position: relative;
+  left: 9%;
+}
+
+.image2{
+  position: relative;
+  left: 9%;
 }

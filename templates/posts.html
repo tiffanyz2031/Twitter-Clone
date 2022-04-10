@@ -11,7 +11,7 @@
             {% csrf_token %}
             <div class="logo">
 
-                <img src="../static/Img/menu.png" alt="" />
+                <img src="../static/Img/man-user.png" alt="" />
             </div>
 
             <input  type="text" name="name" placeholder="Your name" required />
@@ -25,7 +25,7 @@
     <ul>
         {% for post in posts %}
             <li>
-              <img class="menu_icon js-menu-icon" src="../static/Img/man-user.png" alt="" />
+              <img class="menu_icon js-menu-icon" src="../static/Img/menu.png" alt="" />
               <div class="menu">
                   <a href="/edit/{{ post.id }}/">Edit</a><br>
                   <a href="/delete/{{ post.id }}/">Delete</a>
@@ -53,6 +53,15 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
       crossorigin="anonymous"></script>
-<script src="{% static 'js/posts.js' %}"></script>
+<script src="../static/js/posts.js"></script>
+<script>$(function(){
+  // Executed when js-menu-icon js clicked
+  $('.js-menu-icon').click(function(){
+      // $(this) : Self element, namely div.js-men-icon
+      // next() : Next to div.js-menu-icon, namely div.menu
+      // toggle() : Switch show and hide
+      $(this).next().toggle();
+  })
+})</script>
 </section>
 {% endblock %}
