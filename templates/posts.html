@@ -2,7 +2,7 @@
 <section class="content">
   <div class="head">
     <div class="header">
-        <img src="static/img/logo-twitterblue.svg" alt="techis-logo" />
+        <img src="../static/Img/logo-twitterblue.svg" alt="techis-logo" />
         <h1>Home</h1>
     </div>
   </div>
@@ -11,7 +11,7 @@
             {% csrf_token %}
             <div class="logo">
 
-                <img src="{% static 'img/man-user.png' %}" alt="" />
+                <img src="../static/Img/menu.png" alt="" />
             </div>
 
             <input  type="text" name="name" placeholder="Your name" required />
@@ -25,13 +25,13 @@
     <ul>
         {% for post in posts %}
             <li>
-              <img class="menu_icon js-menu-icon" src="{% static 'img/menu.png' %}" alt="" />
+              <img class="menu_icon js-menu-icon" src="../static/Img/menu.png" alt="" />
               <div class="menu">
                   <a href="/edit/{{ post.id }}/">Edit</a><br>
                   <a href="/delete/{{ post.id }}/">Delete</a>
               </div>
               <div class="logo">
-                <img src="{% static 'img/man-user.png' %}" alt="" />
+                <img src="../static/Img/menu.png" alt="" />
                </div>
                <div class="name_body">
                 <div class="name">{{ post.name }}</div> <br>
@@ -42,7 +42,7 @@
                 {% endif %}
                 <div class="heart">
                   <a href="/likes/{{post.id}}/">
-                      <img src="{% static 'img/heart.png' %}"
+                      <img src="../static/Img/heart.png"
                     /></a>
                     {{ post.like_count }}
                 </div>
